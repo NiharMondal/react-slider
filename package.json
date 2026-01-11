@@ -1,8 +1,22 @@
 {
-	"name": "@inihar/react-slider",
-	"version": "1.0.2",
+	"name": "react-slider-range",
+	"version": "0.0.1",
 	"type": "module",
+	"main": "dist/index.js",
 	"description": "A small, configurable React range slider component.",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/NiharMondal/react-slider.git"
+	},
+	"homepage": "https://github.com/NiharMondal/react-slider#readme",
+	"bugs": {
+		"url": "https://github.com/NiharMondal/react-slider/issues"
+	},
 	"keywords": [
 		"react",
 		"slider",
@@ -11,11 +25,12 @@
 		"react-slider",
 		"react-range",
 		"range-slider",
+		"slider-range",
+		"multi-slider",
 		"ui",
 		"component-library"
 	],
-	"author": "",
-	"license": "MIT",
+	"author": "Nihar Mondal <developernihar@gmail.com>",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsup src/index.ts --format esm,cjs --dts --tsconfig tsconfig.app.json",
@@ -23,45 +38,24 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@tailwindcss/vite": "^4.1.18",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
-		"tailwindcss": "^4.1.18"
+		"@tailwindcss/vite": "^4.1.16",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"tailwindcss": "^4.1.16"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.39.1",
-		"@types/node": "^24.10.1",
-		"@types/react": "^19.2.5",
-		"@types/react-dom": "^19.2.3",
-		"@vitejs/plugin-react": "^5.1.1",
-		"eslint": "^9.39.1",
-		"eslint-plugin-react-hooks": "^7.0.1",
-		"eslint-plugin-react-refresh": "^0.4.24",
-		"globals": "^16.5.0",
-		"tsup": "^8.5.1",
+		"@eslint/js": "^9.36.0",
+		"@types/node": "^24.6.0",
+		"@types/react": "^19.1.16",
+		"@types/react-dom": "^19.1.9",
+		"@vitejs/plugin-react": "^5.0.4",
+		"eslint": "^9.36.0",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"eslint-plugin-react-refresh": "^0.4.22",
+		"globals": "^16.4.0",
+		"tsup": "^8.5.0",
 		"typescript": "~5.9.3",
-		"typescript-eslint": "^8.46.4",
-		"vite": "^7.2.4"
-	},
-	"main": "dist/index.cjs.js",
-	"module": "dist/index.esm.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist"
-	],
-	"exports": {
-		"import": "./dist/index.esm.js",
-		"require": "./dist/index.cjs.js"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/NiharMondal/react-slider.git"
-	},
-	"homepage": "https://github.com/NiharMondal/react-slider#readme",
-	"bugs": {
-		"url": "https://github.com/NiharMondal/react-slider/issues"
+		"typescript-eslint": "^8.45.0",
+		"vite": "^7.1.7"
 	}
 }

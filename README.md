@@ -1,73 +1,113 @@
-# react-range
+# React Range Slider
 
-> A small, configurable React range slider component.
+> A lightweight, accessible React range slider component with dual-thumb support.
+> Built with React + TypeScript, supports controlled and uncontrolled usage, keyboard navigation, touch/mouse interaction, and full styling control.
 
-## Installation
+This package is designed as a modern alternative to react-slider with minimal API surface and zero external dependencies.
 
-Install from npm:
+## ✨ Features
+
+-   Dual-thumb range slider
+-   Controlled & uncontrolled modes
+-   Keyboard accessible (ARIA compliant)
+-   Mouse & touch support
+-   Customizable styles via class names
+-   Optional tooltip support
+-   Written in TypeScript
+-   No external UI dependencies
+
+### 📦 Installation
 
 ```bash
-npm install react-range
+npm install react-slider-input
 # or
-yarn add react-range
+yarn add react-slider-input
+# or
+pnpm add react-slider-input
 ```
 
-> If you are using a package manager workspace or private registry, adjust the package name accordingly.
+### 🚀 Usage
 
-## Usage
+**1. Basic Example**
 
-Basic usage (ESM):
-
-```tsx
-import React from "react";
-import { RangeSlider } from "react-range";
+```bash
+import { Slider } from "react-slider-input";
 
 export default function Example() {
-	return (
-		<RangeSlider
-			min={0}
-			max={100}
-			defaultValue={[20, 80]}
-			onChange={(v) => console.log("change", v)}
-			onChangeCommitted={(v) => console.log("committed", v)}
-			showTooltip
-		/>
-	);
+  return (
+    <Slider
+      min={0}
+      max={100}
+      defaultValue={[20, 80]}
+      onChange={(value) => console.log(value)}
+    />
+  );
 }
 ```
 
-Common props:
-
--   `min`, `max`, `step` — number bounds and step size.
--   `value` / `defaultValue` — controlled/uncontrolled values as `[number, number]`.
--   `onChange`, `onChangeCommitted` — update callbacks.
--   `disabled` — disable interaction.
--   `showTooltip`, `formatTooltip` — show and format thumb tooltips.
-
-## Build & Type Declarations
-
-The package ships built JavaScript and TypeScript declarations in `dist/`.
-To build locally:
+**2.Controlled Example**
 
 ```bash
-npm run build
-npm run types
+import { useState } from "react";
+import { Slider } from "react-slider-input";
+
+export default function ControlledExample() {
+  const [value, setValue] = useState<[number, number]>([30, 70]);
+
+  return (
+    <Slider
+      min={0}
+      max={100}
+      value={value}
+      onChange={setValue}
+      onChangeCommitted={(val) => console.log("Committed:", val)}
+    />
+  );
+}
 ```
 
-## Testing locally
+### 🧩 Props
 
-Create a temporary project and install the packed tarball for quick verification:
+| Prop                | Type                | Default            | Description                  |
+| ------------------- | ------------------- | ------------------ | ---------------------------- |
+| `min`               | `number`            | `0`                | Minimum slider value         |
+| `max`               | `number`            | `100`              | Maximum slider value         |
+| `step`              | `number`            | `1`                | Step increment               |
+| `defaultValue`      | `[number, number]`  | `[min, max]`       | Initial range (uncontrolled) |
+| `value`             | `[number, number]`  | —                  | Controlled value             |
+| `onChange`          | `(value) => void`   | —                  | Fires on value change        |
+| `onChangeCommitted` | `(value) => void`   | —                  | Fires on drag end            |
+| `disabled`          | `boolean`           | `false`            | Disable slider               |
+| `className`         | `string`            | `""`               | Wrapper class                |
+| `trackClassName`    | `string`            | `""`               | Track class                  |
+| `rangeClassName`    | `string`            | `""`               | Active range class           |
+| `thumbClassName`    | `string`            | `""`               | Thumb class                  |
+| `showTooltip`       | `boolean`           | `false`            | Show value tooltip           |
+| `formatTooltip`     | `(value) => string` | `value.toString()` | Tooltip formatter            |
 
-```bash
-npm pack
-npm init -y
-npm install ../react-range/react-range-1.0.0.tgz
-```
+### ♿ Accessibility
 
-## License
+-   Fully keyboard navigable (ArrowLeft / ArrowRight)
+-   Proper role="slider" and ARIA attributes
+-   Screen-reader friendly
+-   Focusable thumbs
 
-MIT
+### 🧠 Why This Slider?
 
----
+-   Smaller API than react-slider
+-   No external dependencies
+-   Better TypeScript support
+-   Easier styling
+-   Built for modern React (hooks, forwardRef)
 
-If you'd like I can update the `author` and `repository` fields in `package.json` and publish the package for you (you'll need to be logged in with `npm login`).
+### 🛠 Tech Stack
+
+-   React
+-   TypeScript
+-   Hooks
+-   Forward refs
+-   ARIA accessibility
+
+### 📄 License
+
+MIT © Nihar Mondal

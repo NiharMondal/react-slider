@@ -1,6 +1,7 @@
+"use client";
 import { useState, useRef, useEffect, useCallback, forwardRef } from "react";
 
-export interface RangeSliderProps {
+export interface SliderProps {
 	min?: number;
 	max?: number;
 	step?: number;
@@ -17,7 +18,7 @@ export interface RangeSliderProps {
 	formatTooltip?: (value: number) => string;
 }
 
-const RangeSlider = forwardRef<HTMLDivElement, RangeSliderProps>(
+export const Slider = forwardRef<HTMLDivElement, SliderProps>(
 	(
 		{
 			min = 0,
@@ -182,5 +183,4 @@ const RangeSlider = forwardRef<HTMLDivElement, RangeSliderProps>(
 	}
 );
 
-RangeSlider.displayName = "RangeSlider";
-export default RangeSlider;
+export default Slider;
